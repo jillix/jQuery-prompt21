@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery-prompt21</title>
+        <!-- Mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Twitter Bootstrap -->
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Material Design for Bootstrap -->
+        <link href="css/material-wfont.min.css" rel="stylesheet">
+        <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <script src="../src/jquery.prompt21.js"></script>
+
+        <script src="js/handlers.js"></script>
+    </head>
+    <body>
+        <a href="https://github.com/jillix/jQuery-prompt21"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+        <header>
+            <div class="container text-left">
+                <h1 class="title">jQuery Prompt21 <span class="version"></span></h1>
+                <p>A minimalist jQuery prompt plugin for the 21st Century.</p>
+                <a class="btn btn-danger" href="https://github.com/jillix/jQuery-prompt21/zipball/master">
+                    <i class="fa fa-cloud-download"></i> Download .zip
+                </a>
+                <a class="btn btn-danger" href="https://github.com/jillix/jQuery-prompt21/tarball/master">
+                    <i class="fa fa-file-archive-o"></i> Download .tar.gz
+                </a>
+                <a class="btn btn-danger" href="https://github.com/jillix/jQuery-prompt21/">
+                    <i class="fa fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </header>
+        <article>
+            <div class="container">
+                <h2>Demo</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <pre>&lt;script src=&quot;path/to/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;path/to/jQuery-prompt21.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var p = $(".popup").prompt21();
+    $(".show-popup").on("click", function () {
+        p.getData(function (err, data) {
+            $(".result").text(JSON.stringify(data, null, 2));
+        });
+    });
+&lt;/script&gt;</pre>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-info show-popup">Prompt Popup</button>
+                        <pre class="result">Click the "Prompt Popup" button.</pre>
+                        <div class="popup">
+                            <form class="form-horizontal">
+                                <fieldset>
+
+                                <!-- Form Name -->
+                                <legend>Prompt21 Form</legend>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="name.first">First name</label>
+                                  <div class="col-md-6">
+                                  <input id="name.first" name="name.first" type="text" placeholder="" class="form-control input-md" required="" value="Johnny">
+                                  <span class="help-block">Your first name.</span>
+                                  </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="name.last">Last name</label>
+                                  <div class="col-md-6">
+                                  <input id="name.last" name="name.last" type="text" placeholder="" class="form-control input-md" value="B.">
+                                  <span class="help-block">Your last name.</span>
+                                  </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="story">Your story</label>
+                                  <div class="col-md-6">
+                                    <textarea class="form-control" id="story" name="story">I'm one of the @jillix developers.</textarea>
+                                  </div>
+                                </div>
+
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="cancel"></label>
+                                  <div class="col-md-6">
+                                    <button id="cancel" class="btn btn-default cancel">Cancel</button>
+                                    <button id="save" class="btn btn-success submit">OK</button>
+                                  </div>
+                                </div>
+
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    hljs.highlightBlock($("pre").get(0));
+                </script>
+                <a class="btn btn-lg btn-danger btn-block" href="https://github.com/jillix/jQuery-prompt21/">Check out the documentation on GitHub.</a>
+            </div>
+
+            <h1>Options</h1>
+        </article>
+        <footer>
+            <div class="container">
+                <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> and JavaScript by the <strong><a href="http://github.com/jillix">@jillix</a></strong> developers.
+            </div>
+        </footer>
+    </body>
+</html>

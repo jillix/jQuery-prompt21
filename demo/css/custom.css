@@ -1,0 +1,79 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:700);
+
+.title {
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+}
+
+header {
+    padding: 8em 0;
+}
+
+header, footer {
+    color: white;
+    background: #e91e63;
+    background-image: url("background.png");
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.51);
+}
+
+h1.title {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.4em;
+}
+
+footer {
+    padding: 50px 0;
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 3em;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: white;
+}
+
+line {
+    stroke-width: 2px;
+}
+
+.graph {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 525px;
+}
+
+/* popup */
+.popup {
+    position: fixed;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.58);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.popup > form {
+    background: white;
+    margin: 45px auto;
+    width: 580px;
+    padding: 30px;
+    border-radius: 3px;
+    box-shadow: 0 0 53px rgba(0, 0, 0, 0.15);
+}
+
+legend {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    font-size: 2em;
+}
