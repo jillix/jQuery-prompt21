@@ -2,6 +2,10 @@ jQuery-prompt21
 ===============
 A minimalist jQuery prompt plugin for the 21st Century.
 
+...because `prompt()` is ugly and sync.
+
+[![Demo](http://i.imgur.com/Z2Wm9m2.png)](http://jillix.github.io/jQuery-prompt21/)
+
 ## Usage
 ```js
 <script src="path/to/jquery.js"></script>
