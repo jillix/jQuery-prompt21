@@ -113,10 +113,57 @@
                 <script>
                     hljs.highlightBlock($("pre").get(0));
                 </script>
-                <a class="btn btn-lg btn-danger btn-block" href="https://github.com/jillix/jQuery-prompt21/">Check out the documentation on GitHub.</a>
-            </div>
 
-            <h1>Options</h1>
+                <h1 class="page-header">Documentation</h1>
+                <h2 id="-unflattenobject-flat-"><code>unflattenObject(flat)</code></h2>
+                <p>Converts a flat object to an unflatten one</p>
+                <h3 id="params">Params</h3>
+                <ul>
+                    <li><strong>Object</strong>  <code>flat</code>: The flat object that should be
+                        converted</li>
+                </ul>
+                <h3 id="return">Return</h3>
+                <ul>
+                    <li><strong>Object</strong> Unflatten object</li>
+                </ul>
+                <h2 id="-prompt21-opt_options-"><code>prompt21(opt_options)</code></h2>
+                <p>Initializes a new instance of Prompt21.</p>
+                <p>Example:</p>
+                <pre><code class="lang-js"><span class="hljs-keyword">var</span> p21 = $(<span class="hljs-string">".container"</span>).prompt21();
+            </code></pre>
+                <h3 id="params">Params</h3>
+                <ul>
+                    <li><strong>Object</strong>  <code>opt_options</code>: The options for Prompt21
+                        instance.
+                        <ul>
+                            <li><code>cancel</code> (String): The cancel button jQuery selector
+                                (default: <code>&quot;button.cancel&quot;</code>).</li>
+                            <li><code>showEffect</code> (String): The effect applied to the show
+                                function (default: <code>&quot;.fadeIn&quot;</code>).</li>
+                            <li><code>hideEffect</code> (String): The effect applied to the hide
+                                function (default: <code>&quot;.fadeOut&quot;</code>).</li>
+                            <li><code>form</code> (String): The form jQuery selector (default: <code>&quot;form&quot;</code>).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3 id="return">Return</h3>
+                <ul>
+                    <li><strong>Prompt21</strong> An object containing:
+                        <ul>
+                            <li><code>getData</code> (Function): The <code>getData</code> function.
+                                See below.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2 id="-getdata-callback-"><code>getData(callback)</code></h2>
+                <p>Shows the popup and calls the callback function when the OK button is clicked.</p>
+                <h3 id="params">Params</h3>
+                <ul>
+                    <li><strong>Function</strong>  <code>callback</code>: The callback function.</li>
+                </ul>
+
+                <a class="btn btn-lg btn-danger btn-block" href="https://github.com/jillix/jQuery-prompt21/">Check out the The project on GitHub.</a>
+            </div>
         </article>
         <footer>
             <div class="container">
