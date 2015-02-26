@@ -56,8 +56,8 @@
      * @param {Object} opt_options The options for Prompt21 instance.
      *
      *  - `cancel` (String): The cancel button jQuery selector (default: `"button.cancel"`).
-     *  - `showEffect` (String): The effect applied to the show function (default: `".fadeIn"`).
-     *  - `hideEffect` (String): The effect applied to the hide function (default: `".fadeOut"`).
+     *  - `showFunc` (String): The jQuery function called to show the form (default: `"fadeIn"`).
+     *  - `hideFunc` (String): The jQuery function called to hide the form (default: `"fadeOut"`).
      *  - `form` (String): The form jQuery selector (default: `"form"`).
      *
      * @return {Prompt21} An object containing:
@@ -75,7 +75,7 @@
         $self.hide();
 
         $cancelButton.on("click", function () {
-            $self.hide(settings.hideEffect);
+            $self[settings.hideFunc]();
             $form[0].reset();
             return false;
         });
@@ -90,7 +90,7 @@
          * @return {undefined}
          */
         function getData (callback) {
-            $self.show(settings.showEffect, function () {
+            $self[settings.showFunc].call($self, function () {
                 $(":input:first", $form).focus();
             });
             $form.on("submit", function () {
@@ -108,7 +108,7 @@
                 });
                 data = Utils.unflattenObject(data);
                 callback(null, data);
-                $self.hide(settings.hideEffect);
+                $self[settings.hideFunc]();
                 return false;
             });
         }
@@ -119,13 +119,13 @@
     };
 
     // Version
-    Prompt21.version = "1.0.0";
+    Prompt21.version = "1.1.0";
 
     // Defaults
     Prompt21.defaults = {
         cancel: "button.cancel",
-        showEffect: "fadeIn",
-        hideEffect: "fadeOut",
+        showFunc: "fadeIn",
+        hideFunc: "fadeOut",
         form: "form"
     };
 })($);
