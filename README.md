@@ -4,7 +4,7 @@ A minimalist jQuery prompt plugin for the 21st Century.
 
 ...because `prompt()` is ugly and sync.
 
-[![Demo](http://i.imgur.com/Z2Wm9m2.png)](http://jillix.github.io/jQuery-prompt21/)
+[![Demo](http://i.imgur.com/NzKOKVX.png)](http://jillix.github.io/jQuery-prompt21/)
 
 ## Usage
 ```js
@@ -22,16 +22,16 @@ A minimalist jQuery prompt plugin for the 21st Century.
 
 ## Documentation
 
-## `unflattenObject(flat)`
+### `unflattenObject(flat)`
 Converts a flat object to an unflatten one
 
-### Params
+#### Params
 - **Object** `flat`: The flat object that should be converted
 
-### Return
+#### Return
 - **Object** Unflatten object
 
-## `prompt21(opt_options)`
+### `prompt21(opt_options)`
 Initializes a new instance of Prompt21.
 
 Example:
@@ -40,21 +40,21 @@ Example:
 var p21 = $(".container").prompt21();
 ```
 
-### Params
+#### Params
 - **Object** `opt_options`: The options for Prompt21 instance.
  - `cancel` (String): The cancel button jQuery selector (default: `"button.cancel"`).
- - `showEffect` (String): The effect applied to the show function (default: `".fadeIn"`).
- - `hideEffect` (String): The effect applied to the hide function (default: `".fadeOut"`).
+ - `showFunc` (String): The jQuery function called to show the form (default: `"fadeIn"`).
+ - `hideFunc` (String): The jQuery function called to hide the form (default: `"fadeOut"`).
  - `form` (String): The form jQuery selector (default: `"form"`).
 
-### Return
+#### Return
 - **Prompt21** An object containing:
  - `getData` (Function): The `getData` function. See below.
 
-## `getData(callback)`
+### `getData(callback)`
 Shows the popup and calls the callback function when the OK button is clicked.
 
-### Params
+#### Params
 - **Function** `callback`: The callback function.
 
 ## How to contribute
