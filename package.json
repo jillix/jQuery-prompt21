@@ -1,6 +1,6 @@
 {
   "name": "jquery-prompt21",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A minimalist jQuery prompt plugin for the 21st Century.",
   "main": "src/jquery-prompt21.js",
   "scripts": {
