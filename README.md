@@ -8,6 +8,53 @@ A minimalist jQuery prompt plugin for the 21st Century.
 
 ## Usage
 ```js
+<button class="btn btn-info show-popup">Prompt Popup</button>
+<pre class="result">Click the "Prompt Popup" button.</pre>
+<div class="popup">
+    <form class="form-horizontal">
+        <fieldset>
+
+        <!-- Form Name -->
+        <legend>Prompt21 Form</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="name.first">First name</label>
+          <div class="col-md-6">
+          <input id="name.first" name="name.first" type="text" placeholder="" class="form-control input-md" required="" value="Johnny">
+          <span class="help-block">Your first name.</span>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="name.last">Last name</label>
+          <div class="col-md-6">
+          <input id="name.last" name="name.last" type="text" placeholder="" class="form-control input-md" value="B.">
+          <span class="help-block">Your last name.</span>
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="story">Your story</label>
+          <div class="col-md-6">
+            <textarea class="form-control" id="story" name="story">I'm one of the @jillix developers.</textarea>
+          </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="cancel"></label>
+          <div class="col-md-6">
+            <button type="button" id="cancel" class="btn btn-default cancel">Cancel</button>
+            <button type="submit" id="save" class="btn btn-success submit">OK</button>
+          </div>
+        </div>
+
+        </fieldset>
+    </form>
+</div>
 <script src="path/to/jquery.js"></script>
 <script src="path/to/jQuery-prompt21.js"></script>
 <script>
