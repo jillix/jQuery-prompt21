@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>svg.connectable.js</title>
+        <title>jQuery Prompt21</title>
         <!-- Mobile support -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,26 +20,26 @@
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
         <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 
-        <!-- svg.js -->
-        <script src="js/svg.js"></script>
-        <script src="js/svg.draggable.js"></script>
-        <script src="../src/svg.connectable.js"></script>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <script src="../src/jquery-prompt21.js"></script>
 
         <script src="js/handlers.js"></script>
     </head>
     <body>
-        <a href="https://github.com/jillix/svg.connectable.js"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+        <a href="https://github.com/jillix/jQuery-prompt21"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
         <header>
             <div class="container text-left">
-                <h1 class="title">svg.connectable.js <span class="version"></span></h1>
-                <p>A JavaScript library for connecting SVG things.</p>
-                <a class="btn btn-danger" href="https://github.com/jillix/svg.connectable.js/zipball/master">
+                <h1 class="title">jQuery Prompt21 <span class="version"></span></h1>
+                <p>A minimalist jQuery prompt plugin for the 21st Century.</p>
+                <a class="btn btn-danger" href="https://github.com/jillix/jQuery-prompt21/zipball/master">
                     <i class="fa fa-cloud-download"></i> Download .zip
                 </a>
-                <a class="btn btn-danger" href="https://github.com/jillix/svg.connectable.js/tarball/master">
+                <a class="btn btn-danger" href="https://github.com/jillix/jQuery-prompt21/tarball/master">
                     <i class="fa fa-file-archive-o"></i> Download .tar.gz
                 </a>
-                <a class="btn btn-danger" href="https://github.com/jillix/svg.connectable.js/">
+                <a class="btn btn-danger" href="https://github.com/jillix/jQuery-prompt21/">
                     <i class="fa fa-github"></i> View on GitHub
                 </a>
             </div>
@@ -49,43 +49,120 @@
                 <h2>Demo</h2>
                 <div class="row">
                     <div class="col-lg-6">
-                        <pre>&lt;script src=&quot;path/to/svg.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;path/to/svg.draggable.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;path/to/svg.connectable.js&quot;&gt;&lt;/script&gt;
-&lt;script class=&quot;graph&quot;&gt;&lt;/div&gt;
+                        <pre>&lt;script src=&quot;path/to/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;path/to/jQuery-prompt21.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
-    var svg = new SVG(document.querySelector(&quot;.graph&quot;)).size(&quot;100%&quot;, 500);
-    var links = svg.group();
-    var markers = svg.group();
-    var nodes = svg.group();
-
-    var g1 = nodes.group().translate(300, 200).draggable();
-    g1.circle(80).fill(&quot;#C2185B&quot;);
-
-    var g2 = nodes.group().translate(100, 200).draggable();
-    g2.circle(50).fill(&quot;#E91E63&quot;);
-
-    var g3 = nodes.group().translate(200, 400).draggable();
-    g3.circle(100).fill(&quot;#FF5252&quot;);
-
-    g1.connectable({
-        container: links,
-        markers: markers
-    }, g2).setLineColor(&quot;#5D4037&quot;);
-
-    g2.connectable({
-        padEllipse: true
-    }, g3).setLineColor(&quot;#5D4037&quot;)
+    var p = $(".popup").prompt21();
+    $(".show-popup").on("click", function () {
+        p.getData(function (err, data) {
+            $(".result").text(JSON.stringify(data, null, 2));
+        });
+    });
 &lt;/script&gt;</pre>
                     </div>
                     <div class="col-lg-6">
-                        <div class="graph"></div>
+                        <button class="btn btn-info show-popup">Prompt Popup</button>
+                        <pre class="result">Click the "Prompt Popup" button.</pre>
+                        <div class="popup">
+                            <form class="form-horizontal">
+                                <fieldset>
+
+                                <!-- Form Name -->
+                                <legend>Prompt21 Form</legend>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="name.first">First name</label>
+                                  <div class="col-md-6">
+                                  <input id="name.first" name="name.first" type="text" placeholder="" class="form-control input-md" required="" value="Johnny">
+                                  <span class="help-block">Your first name.</span>
+                                  </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="name.last">Last name</label>
+                                  <div class="col-md-6">
+                                  <input id="name.last" name="name.last" type="text" placeholder="" class="form-control input-md" value="B.">
+                                  <span class="help-block">Your last name.</span>
+                                  </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="story">Your story</label>
+                                  <div class="col-md-6">
+                                    <textarea class="form-control" id="story" name="story">I'm one of the @jillix developers.</textarea>
+                                  </div>
+                                </div>
+
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="cancel"></label>
+                                  <div class="col-md-6">
+                                    <button id="cancel" class="btn btn-default cancel">Cancel</button>
+                                    <button id="save" class="btn btn-success submit">OK</button>
+                                  </div>
+                                </div>
+
+                                </fieldset>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <script>
-                    hljs.highlightBlock(document.querySelector("pre"));
+                    hljs.highlightBlock($("pre").get(0));
                 </script>
-                <a class="btn btn-lg btn-danger btn-block" href="https://github.com/jillix/svg.connectable.js/">Check out the documentation on GitHub.</a>
+
+                <h1 class="page-header">Documentation</h1>
+                <h2 id="-unflattenobject-flat-"><code>unflattenObject(flat)</code></h2>
+                <p>Converts a flat object to an unflatten one</p>
+                <h3 id="params">Params</h3>
+                <ul>
+                    <li><strong>Object</strong>  <code>flat</code>: The flat object that should be
+                        converted</li>
+                </ul>
+                <h3 id="return">Return</h3>
+                <ul>
+                    <li><strong>Object</strong> Unflatten object</li>
+                </ul>
+                <h2 id="-prompt21-opt_options-"><code>prompt21(opt_options)</code></h2>
+                <p>Initializes a new instance of Prompt21.</p>
+                <p>Example:</p>
+                <pre><code class="lang-js"><span class="hljs-keyword">var</span> p21 = $(<span class="hljs-string">".container"</span>).prompt21();
+            </code></pre>
+                <h3 id="params">Params</h3>
+                <ul>
+                    <li><strong>Object</strong>  <code>opt_options</code>: The options for Prompt21
+                        instance.
+                        <ul>
+                            <li><code>cancel</code> (String): The cancel button jQuery selector
+                                (default: <code>&quot;button.cancel&quot;</code>).</li>
+                            <li><code>showEffect</code> (String): The effect applied to the show
+                                function (default: <code>&quot;.fadeIn&quot;</code>).</li>
+                            <li><code>hideEffect</code> (String): The effect applied to the hide
+                                function (default: <code>&quot;.fadeOut&quot;</code>).</li>
+                            <li><code>form</code> (String): The form jQuery selector (default: <code>&quot;form&quot;</code>).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3 id="return">Return</h3>
+                <ul>
+                    <li><strong>Prompt21</strong> An object containing:
+                        <ul>
+                            <li><code>getData</code> (Function): The <code>getData</code> function.
+                                See below.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2 id="-getdata-callback-"><code>getData(callback)</code></h2>
+                <p>Shows the popup and calls the callback function when the OK button is clicked.</p>
+                <h3 id="params">Params</h3>
+                <ul>
+                    <li><strong>Function</strong>  <code>callback</code>: The callback function.</li>
+                </ul>
+
+                <a class="btn btn-lg btn-danger btn-block" href="https://github.com/jillix/jQuery-prompt21/">Check out the The project on GitHub.</a>
             </div>
         </article>
         <footer>
