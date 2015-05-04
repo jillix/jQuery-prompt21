@@ -119,7 +119,7 @@
     };
 
     // Version
-    Prompt21.version = "1.1.0";
+    Prompt21.version = "1.1.1";
 
     // Defaults
     Prompt21.defaults = {
