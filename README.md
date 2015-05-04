@@ -6,6 +6,9 @@ A minimalist jQuery prompt plugin for the 21st Century.
 
 [![Demo](http://i.imgur.com/NzKOKVX.png)](http://jillix.github.io/jQuery-prompt21/)
 
+## Available on CDN
+This library is [available on CDNJS](https://cdnjs.com/libraries/jquery-prompt21).
+
 ## Usage
 ```js
 <button class="btn btn-info show-popup">Prompt Popup</button>
